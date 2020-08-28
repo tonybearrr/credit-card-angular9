@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./credit-card.component.scss']
 })
 export class CreditCardComponent implements OnInit {
-
+  cardMask = ['#', '#', '#', '#', '  ', '#', '#', '#', '#', '  ', '#', '#', '#', '#', '  ', '#', '#', '#', '#'];
   constructor() { }
 
   ngOnInit(): void {
