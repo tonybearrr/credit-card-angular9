@@ -1,0 +1,43 @@
+.label {
+  color: rgba(255, 255, 255, 0.8);
+  // text-transform: uppercase;
+  font-size: 12px;
+
+}
+
+.form-wrapper {
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)), url('../../../assets/change-background-color-on-wix-1024x678.jpg');
+  // background-size: 400% 400%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 25px;
+  margin-right: 100px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.submit {
+  padding: 5px 8px;
+  border-radius: 4px;
+  height: 37px;
+  width: 50%;
+  border: 1px solid #fff;
+  background: transparent;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  font-family: "Alata", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: .3s;
+  cursor: pointer;
+  outline: none;
+}
+
+.submit:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transition: .3s;
+}
+
+.submit:active {
+  border: 1px solid purple;
+}

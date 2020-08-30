@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-credit-card',
@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./credit-card.component.scss']
 })
 export class CreditCardComponent implements OnInit {
-  cardMask = ['#', '#', '#', '#', '  ', '#', '#', '#', '#', '  ', '#', '#', '#', '#', '  ', '#', '#', '#', '#'];
+  @Input() cardType;
+  @Input() cardNumber;
+  @Input() cardHolder;
+  @Input() expiresYear;
+  @Input() expiresMonth;
+  @Input() isFliped;
+  @Input() timeToFlip;
+  @Input() cvv;
+  cardMask = '#### #### #### ####'
+
   constructor() { }
 
+  flip() {
+    setTimeout(() => {
+      return this.isFliped;
+    }, 300)
+  }
   ngOnInit(): void {
   }
-
 }

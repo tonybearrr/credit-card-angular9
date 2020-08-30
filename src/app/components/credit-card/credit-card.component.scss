@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 55px;
 
     &__name {
       font-size: 24px;
@@ -35,7 +36,7 @@
   }
 
   &-footer {
-    margin: 25px 13px;
+    margin: 13px 13px;
     display: flex;
     justify-content: space-between;
   }
@@ -59,6 +60,25 @@
       font-size: 18px;
       color: #fff;
       text-transform: uppercase;
+      width: 60px;
     }
   }
+}
+
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0deg);
+  transition: all 0.35s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+
+}
+
+.fliped {
+  transform: rotateX(180deg);
+  transition: all 0.35s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+}
+
+.flip-side {
+  transform: rotateX(180deg);
 }

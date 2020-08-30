@@ -1,2 +1,10 @@
-<app-credit-card></app-credit-card>
-<!-- <app-credit-card-form></app-credit-card-form> -->
+<div class="main">
+  <app-credit-card style="width: 50%;" [cardType]="cardType" [cardNumber]="cardNumber" [cardHolder]="cardHolder"
+    [expiresMonth]="expiresMonth" [expiresYear]="expiresYear" [isFliped]="isFliped" [timeToFlip]="timeToFlip"
+    [cvv]="cvv">
+  </app-credit-card>
+  <app-credit-card-form (cardType)="getCardType($event)" (numberOfCard)="getCardNumber($event)"
+    (cardHolder)="getCardHolder($event)" (expiresMonth)="getMonth($event)" (expiresYear)="getYear($event)"
+    (flip)="flipCard($event)" (cvv)="getCvv($event)" style="width: 50%;">
+  </app-credit-card-form>
+</div>

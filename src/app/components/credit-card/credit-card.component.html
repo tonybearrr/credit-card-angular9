@@ -1,8 +1,9 @@
-<div style="width: 50%; height: 100%;display: flex; align-items: center; justify-content: center;">
-  <div class="card">
+<div class="card-wrapper" [ngClass]="{fliped: timeToFlip === true}">
+  <div class="card" *ngIf="!isFliped; else otherSide">
     <div class="card-header">
       <div class="card-header__name">Credit Card</div>
-      <img class="card-header__logo" src="../../../assets/visa.png" alt="">
+      <img class="card-header__logo" src="../../../assets/{{cardType === 'visa'? 'visa.png' : 'mastercard.png'}}"
+        alt="">
     </div>
 
     <img style="transform: rotate(90deg);
@@ -10,17 +11,35 @@
       src="../../../assets/kisspng-integrated-circuits-chips-smart-card-computer-ic-chip-5abc26ec39a441.9442861815222801722361.png"
       alt="chip">
     <div class="card-number">
-      <span *ngFor="let mask of cardMask">{{mask}}</span>
+      <span>{{cardNumber ? cardNumber: cardMask}}</span>
     </div>
     <div class="card-footer">
       <div>
         <div class="card-holder">Card Holder</div>
-        <div class="card-holder__name">Full name</div>
+        <div class="card-holder__name">{{cardHolder? cardHolder: 'Full name'}}</div>
       </div>
-      <div>
+      <div style="width: 60px;">
         <div class="card-expire">Expires</div>
-        <div class="card-expire__date">MM/YY</div>
+        <div class="card-expire__date">{{expiresMonth?expiresMonth:'MM'}}/{{expiresYear? expiresYear : 'YY'}}</div>
       </div>
     </div>
   </div>
+  <!-- {{cardNumber}} -->
 </div>
+<ng-template #otherSide>
+  <div class="card" [ngClass]="{'flip-side': isFliped}" style="position: relative;">
+
+    <div
+      style="width: 100%; height: 50px; background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(50,50,50,1) 50%, rgba(0,0,0,1) 100%); position: absolute; left:0; top:15px;">
+
+    </div>
+
+    <div style=" margin-top: 70px;">
+      <div
+        style="width:200px; height: 30px; background: #ccc; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;">
+        <div>{{cvv? cvv:'CVV'}}</div>
+      </div>
+    </div>
+  </div>
+
+</ng-template>

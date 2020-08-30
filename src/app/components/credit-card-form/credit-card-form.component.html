@@ -1,1 +1,38 @@
-<p>credit-card-form works!</p>
+<div class="form-wrapper">
+  <div class="p-fluid p-grid">
+    <div class="p-col-12 p-md-12">
+      <label for="cardnumber" class="label">Card number</label>
+      <input id="cardnumber" type="text" pInputText #num (input)="getCardType($event.key)" [pKeyFilter]="cardCvv"
+        (change)="setCardNumber($event)" [(ngModel)]="cardNumberData" (ngModelChange)="setCardNumber($event.key)"
+        maxLength="16">
+    </div>
+    <div class="p-col-12 p-md-12">
+      <label for="holder" class="label">Card Holder</label>
+      <input id="holder" type="text" [pKeyFilter]="leters" pInputText #input [(ngModel)]="holderData"
+        (input)="input.value=$event.target.value.toUpperCase(); setHolder($event.target.value.toUpperCase())">
+    </div>
+  </div>
+  <div class="p-fluid p-grid">
+    <div class="p-field p-col-12 p-md-4">
+      <label for="s" class="label">Month</label>
+      <p-dropdown id="s" [options]="monthes" [(ngModel)]="selectedMonthData" optionLabel="month" [showClear]="false"
+        [autoDisplayFirst]="false" (onChange)="setMonth($event)">
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label for="s" class="label">Year</label>
+      <p-dropdown id="s" [options]="years" [(ngModel)]="selectedYearData" optionLabel="year" [showClear]="false"
+        (onChange)="setYear($event)" [autoDisplayFirst]="false">
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+      <label for="cvv" class="label">CVV</label>
+      <input type="text" pInputText [pKeyFilter]="cardCvv" (focus)="flipCard(true)" maxLength="3"
+        (blur)="flipCard(false)" (input)="setCvv($event)" [(ngModel)]="cvvData">
+    </div>
+  </div>
+  <div style="display:flex; justify-content: center;">
+    <button class="submit" (click)="submitForm()">Submit</button>
+  </div>
+
+</div>
