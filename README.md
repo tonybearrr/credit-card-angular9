@@ -1,6 +1,6 @@
 # CreditCard
 ## Preview
-![UserList](https://github.com/Tonybonybob/credit-card-angular9/raw/master/preview.png)
+![UserList](https://github.com/Tonybonybob/credit-card-angular9/raw/master/src/assets/preview.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
